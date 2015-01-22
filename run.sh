@@ -14,9 +14,9 @@ fi
 
 if [ -n "$WERCKER_GIT_PUSH_USER" ]
 then
-  git_user="git"
-else
   git_user="$WERCKER_GIT_PUSH_USER"
+else
+  git_user="git"
 fi
 
 info "using github repo \"$repo\""
