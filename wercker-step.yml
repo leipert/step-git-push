@@ -1,5 +1,5 @@
 name: git-push
-version: 0.4.8
+version: 0.4.9
 description: Deploy to a git branch in a given Repo
 keywords:
   - github
