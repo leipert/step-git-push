@@ -12,11 +12,11 @@ else
   repo="$WERCKER_GIT_OWNER/$WERCKER_GIT_REPOSITORY"
 fi
 
-if [ -n "$WERCKER_GIT_USER"]
+if [ -n "$WERCKER_GIT_PUSH_USER"]
 then
   git_user="git"
 else
-  git_user="$WERCKER_GIT_USER"
+  git_user="$WERCKER_GIT_PUSH_USER"
 fi
 
 info "using github repo \"$repo\""
