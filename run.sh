@@ -12,6 +12,13 @@ else
   repo="$WERCKER_GIT_OWNER/$WERCKER_GIT_REPOSITORY"
 fi
 
+if [ -n "$WERCKER_GIT_USER"]
+then
+  git_user="git"
+else
+  git_user="$WERCKER_GIT_USER"
+fi
+
 info "using github repo \"$repo\""
 
 # remote path
@@ -22,7 +29,7 @@ then
   info "using github token"
 elif [ -n "$WERCKER_GIT_PUSH_HOST" ]
 then
-  remote="git@$WERCKER_GIT_PUSH_HOST:$repo.git"
+  remote="$git_user@$WERCKER_GIT_PUSH_HOST:$repo.git"
   info "using git ssh: $remote"
 else
   fail "missing option \"gh_token\" or \"host\", aborting"
